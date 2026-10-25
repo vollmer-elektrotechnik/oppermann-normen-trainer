@@ -20,7 +20,10 @@ import {
   Cpu,
   BookmarkCheck,
   Building2,
-  Gauge
+  Gauge,
+  Target,
+  BriefcaseBusiness,
+  Stars
 } from 'lucide-react';
 
 const STANDARDS_DATA = [
@@ -522,7 +525,42 @@ export default function App() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 bg-slate-900/60 p-2 rounded-2xl border border-slate-800/80">
+        <div className="mb-6 grid gap-4 md:grid-cols-3">
+          <div className="kpi-card rounded-2xl p-4">
+            <div className="flex items-center justify-between mb-3">
+              <div className="w-10 h-10 rounded-xl bg-orange-500/15 flex items-center justify-center">
+                <Stars className="w-5 h-5 text-orange-300" />
+              </div>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400">Focus</span>
+            </div>
+            <p className="text-2xl font-bold text-white">12+</p>
+            <p className="text-xs text-slate-300 mt-1">Schlüsselnormen mit Interview-Antworten</p>
+          </div>
+
+          <div className="kpi-card rounded-2xl p-4">
+            <div className="flex items-center justify-between mb-3">
+              <div className="w-10 h-10 rounded-xl bg-sky-500/15 flex items-center justify-center">
+                <Target className="w-5 h-5 text-sky-300" />
+              </div>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400">Prüfung</span>
+            </div>
+            <p className="text-2xl font-bold text-white">6</p>
+            <p className="text-xs text-slate-300 mt-1">Fragen im Quiz-Format für Repetition</p>
+          </div>
+
+          <div className="kpi-card rounded-2xl p-4">
+            <div className="flex items-center justify-between mb-3">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/15 flex items-center justify-center">
+                <BriefcaseBusiness className="w-5 h-5 text-emerald-300" />
+              </div>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400">Interview</span>
+            </div>
+            <p className="text-2xl font-bold text-white">EN 54</p>
+            <p className="text-xs text-slate-300 mt-1">Punkt- vs. Kanalrauchmelder im Fokus</p>
+          </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 bg-slate-900/60 p-2 rounded-2xl border border-slate-800/80 glass-panel">
           <div className="flex items-center space-x-1 w-full sm:w-auto overflow-x-auto scrollbar-none">
             <button
               onClick={() => setActiveTab('flashcards')}
@@ -649,7 +687,7 @@ export default function App() {
                   return (
                     <div
                       key={std.id}
-                      className={`bg-slate-900/80 border transition-all rounded-2xl p-5 flex flex-col justify-between ${
+                      className={`bg-slate-900/80 border transition-all rounded-2xl p-5 flex flex-col justify-between hover:-translate-y-0.5 hover:border-slate-600 ${
                         isLearned ? 'border-emerald-500/30 bg-slate-900/40' : 'border-slate-800 hover:border-slate-700'
                       }`}
                     >
